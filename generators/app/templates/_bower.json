@@ -1,0 +1,19 @@
+{
+  "name": "<%= appName %>",
+  "version": "0.0.1",
+  "main": "public/app/index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "public/bower",
+    "test"
+  ],
+  "dependencies": {
+    "angular": "~1.4.5",
+    "angular-mocks": "~1.4.5",
+    "angular-ui-router": "~0.2.15",
+    "bootstrap": "~3.3.5",,
+    "angular-cookies": "~1.4.7",
+    "moment": "~2.10.6"
+  }
+}
