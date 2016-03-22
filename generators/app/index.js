@@ -25,7 +25,6 @@ module.exports = yeoman.generators.Base.extend({
     }.bind(this));
   },
   scaffoldFolders: function(){
-      this.mkdir("app");
       this.mkdir("bin");
       this.mkdir("grunt");
       this.mkdir("grunt/options");
@@ -71,14 +70,20 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('_gruntfile.js'),
         this.destinationPath('gruntfile.js')
       );
+      this.fs.copy(
+        this.templatePath('bin/www'),
+        this.destinationPath('bin/www')
+      );
+      this.fs.copy(
+        this.templatePath('public/index.html'),
+        this.destinationPath('public/index.html')
+      );
       copyAll.apply(this,[[
         'app.js',
         'karma.conf.js',
         'protractor.conf.js',
         'README.md',
         'tsd.json',
-        
-        'bin/www',
         
         'routes/index.js',
         
@@ -97,7 +102,6 @@ module.exports = yeoman.generators.Base.extend({
         'grunt/tasks/default.js',
         
         'public/favicon.ico',
-        'public/index.html',
         'public/assets/css/styles.less',
         
         'public/app/declarations.ts',
